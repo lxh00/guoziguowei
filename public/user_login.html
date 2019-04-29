@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>果滋果味商城用户登录</title>
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="./font_deab0f2f1qc/iconfont.css">
+    <style>
+    </style>
+</head>
+<style>
+    .hid{display: none;}
+    #bgImgs{
+        position:absolute;
+        height:1000px;
+        width:100%;
+        top:-50px;
+        overflow:hidden;
+        z-index: -10;
+    }
+    #bgLb>ul>li:first-child{
+        background-image: url("./images/login/timg1.jpg");
+    }
+    #bgLb>ul>li:nth-child(2){
+        background-image: url("./images/login/timg2.jpg");
+    }
+    #bgLb>ul>li:nth-child(3){
+        background-image: url("./images/login/timg3.jpg");
+    }
+    #bgLb>ul>li:nth-child(4){
+        background-image: url("./images/login/timg4.jpg");
+    }
+    #bgLb>ul>li:last-child{
+        background-image: url("./images/login/timg5.jpg");
+    }
+</style>
+<body>
+    <!-- 背景样式 -->
+    <canvas id="c3" width="1900" height="990"></canvas>
+    <div class="continer">
+        <div class="qiehuan">
+           <span class="dian">登录商城</span><span class="weidian">注册新用户</span>
+        </div>
+        <!-- 登录 -->
+        <div class="login">
+            <p>
+                <span></span>
+            </p>
+            <p class="name">
+                <i class="icon iconfont">&#xe663;</i><input type="text" name="uname" placeholder="请输入有效用户名" autofocus required pattern="^.+$" title="请输入有效用户名">
+                <span class="qc hid">X</span>
+            </p>
+            <p class="upwd">
+                <i class="icon iconfont">&#xe644;</i><input type="password" name="upwd" placeholder="请输入有效密码" required minlength="6" maxlength="32" title="请输入有效密码">
+                <span class="qc hid">X</span>
+            </p>
+            <p>
+                <span><input type="checkbox" id="jz">&nbsp;<label for="jz">记住密码</label></span>
+                <a title="忘记密码?" href="http://127.0.0.1:3000/error404_1.html">忘记密码?</a>
+            </p>
+            <p>
+                <button id="denglu">登录</button>
+            </p>
+            <p>
+                <a href="javascript:;" title="QQ登录"><span class="icon iconfont">&#xe50b;</span>
+                <span>QQ登录</span></a>
+                <a href="javascript:;" title="微博登录"><span class="icon iconfont">&#xf0105;</span>
+                <span>微博登录</span></a>
+                <a href="javascript:;" title="微信登录"><span class="icon iconfont">&#xe620;</span>
+                <span>微信登录</span></a>
+                
+            </p>
+        </div>
+        <!-- 注册 -->
+        <div class="zhuce hid">
+            <!-- 用户名 -->
+            <p class="name">
+                <i class="icon iconfont">&#xe663;</i><input type="text" name="uname" placeholder="用户名任意字符至少3位" autofocus required pattern="^.+$" title="请输入有效用户名"><br>
+                <span></span>
+            </p>
+            <!-- 密码 -->
+            <p class="upwd">
+                <i class="icon iconfont">&#xe644;</i><input type="password" name="upwd" placeholder="密码6~32位" required minlength="6" maxlength="32" title="请输入有效密码"><br>
+                <span></span>
+            </p>
+            <!-- 密码验证 -->
+            <p class="upwd">
+                <i class="icon iconfont">&#xe644;</i><input type="password" id="isUpwd" placeholder="确认密码" title="密码确认"><br>
+                <span></span>
+            </p>
+            <!-- 是否同意商城服务协议 -->
+            <p>
+                 <input type="checkbox" id="chx"><label for="chx">点击表示您同意</label><a href="javascript:;">《商城服务协议》</a>
+            </p>
+            <p>
+                <input type="button" value="注册" id="zhuce" disabled>
+                <!-- <button id="zhuce" aria-checked="false">注册</button> -->
+            </p>
+            
+        </div>
+    </div>
+    <div id="bgImgs"></div>
+    <div id="bgLb">
+        <ul>
+            <li class="fade"></li>
+            <li class="fade"></li>
+            <li class="fade"></li>
+            <li class="fade"></li>
+            <li class="fade"></li>
+        </ul>
+    </div>
+    <script src="./scripts/jquery-1.11.3.js"></script>
+    <script src="./scripts/ajax.js"></script>
+    <script src="./scripts/login.js"></script>
+    <script>
+        //  //0.获取画布
+        //  var c3=document.getElementById("c3");
+        //  ctx=c3.getContext("2d")
+        // //1.创建循环300次
+        // function yuan(){
+        //     ctx.clearRect(0,0,2000,1000);//清除画布
+        //     for(var i=0;i<300;i++){
+        //         //2.创建圆、大小随机
+        //         ctx.beginPath();
+        //         ctx.fillStyle=(rc(0,255));
+        //         ctx.arc(rn(0,2000),rn(0,2000),rn(10,30),0,2*Math.PI);
+        //         //ctx.stroke();
+        //         ctx.fill();
+        //     }  
+        // }
+        // yuan();
+        // // setInterval(()=>{
+        // //     yuan();
+        // // },1500);
+    
+        // //大小随机 位置随机 颜色随机 透明
+        // //rn 随机整型数值 min,max 范围
+        // function rn(min,max){
+        //     var num=Math.random()*(max-min)+min;
+        //     return Math.floor(num);
+        // }
+        // //rc 随机颜色 rgb(255,255,255)
+        // function rc(min,max){
+        //     var r=rn(min,max);
+        //     var g=rn(min,max);
+        //     var b=rn(min,max);
+        //     var a=Math.floor(Math.random()*10+3)*0.1;//随机透明度
+        //     return `rgba(${r},${g},${b},${a})`;
+        // }
+
+    </script>
+    <script>
+        // 背景轮播图
+        var im=0;
+        var le=1;
+        setInterval(function(){
+            im=le*2000+im
+            $("#bgLb>ul").css("margin-left",-im)
+            if(im==8000){
+                le=-1
+            }
+            if(im==0){
+                le=1;
+            }
+        },8000)
+        // var im=1;
+        // $("body").css("background-image",`url(./images/login/timg5.jpg)`);
+        // setInterval(function(){
+        //     im++;
+        //     if(im==6){
+        //         im=1;
+        //     }
+        //     $("body").css("background-image",`url(./images/login/timg${im}.jpg)`);
+        // },3000)
+        
+    </script>
+    <script>
+        $(function() {
+            setInterval(function() {
+                var maxW = document.body.clientWidth,  //获取页面宽度
+                    maxH = document.body.clientHeight,  //获取页面高度
+                    left = Math.random() * maxW,
+                    bottom = left - (Math.random() - 0.5) * 0.2 * maxW, //保证落下的位置水平有变化，但不大
+                    opacity = 0.7 + 0.3 * Math.random();
+                    speed = 30;
+                    size = 30 + 10 * Math.random(); //大小随机
+                    // color =["#f00","#00f","#dbc","#a00"];
+                    smImgs=["./images/small/1.png","./images/small/4.png","./images/small/5.png","./images/small/6.png","./images/small/7.png","./images/small/8.png","./images/small/9.png","./images/small/10.png","./images/small/11.png","./images/small/14.png"];
+                    i=parseInt(Math.random()*10-1);//随机下标
+                    num = Math.floor(Math.random() * 50) //产生0-9随机数，当然你们可以自己设置
+                    var style =`position:absolute;top:0px;display:block;width:${size}px;height:${size}px;left:${left}px;opacity:${opacity}`;
+                    var div = "";
+                    for(var s=0;s<10;s++){
+                        div+='<span class = "dd" style=' + style + '><img src='+ smImgs[i] +'></span>'
+                    }
+                $('#bgImgs').prepend(div)//在父元素下加入新元素
+                $('#bgImgs>span').animate({
+                    top: maxH,
+                    left: bottom
+                }, 10000, function() {
+                    $(this).remove() //这一步很关键，要把落下的去掉，不然会越积越多
+                });
+            }, 20) //20ms产生一个		
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理系统登录界面</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background:url("./images/backstage/timg.jpg");
+           background-repeat:no-repeat;
+           background-attachment: fixed;
+           background-size:100% 100%;
+        }
+        .login{
+            width:500px;height:500px;
+            border:1px solid transparent;
+            /* background:url("./images/backstage/qingpingguo1.png"); */
+            background-size:93% 93%;
+            background-repeat: no-repeat;
+            position: relative;
+            left:51%;top:160px;
+            
+        }
+        .login>div:only-child{
+            position: absolute;
+            left:65px;top:150px;
+            /* border:1px dashed rgb(182, 161, 161); */
+            border-radius:20px;
+            padding:10px;
+            background-image:linear-gradient(to right,rgba(0,255,51,.2) 0,rgba(204,255,255,.2) 100%);
+        }
+        p.top_g{
+            border-bottom:3px dashed #e0ebea;
+        }
+        p.top_g>img{
+            width:80px;height:80px;
+        }
+        p.top_g>span{
+            position: relative;
+            top:-10px;
+            color:rgb(5, 5, 5);
+            font:28px "华文隶书";
+            text-shadow: 2px 2px 4px rgb(49, 46, 46);
+        }
+        p.top_g>span:nth-child(2){
+            position: relative;
+            top:-17px;
+            font-family:"华文行楷";
+            font-size:40px;
+            color:rgb(148, 105, 161);
+        }
+        .form{
+            width:400px;height:200px;
+            line-height: 40px;
+            margin:24px;
+            font:bold 30px "华文行楷"; 
+            color:rgb(47, 35, 35);
+        }
+        .form>p>input{
+            border-radius:18px;
+            width:250px;height:30px; 
+            margin:10px 10px 5px 0;
+            background-color:thistle;
+            border:1px solid #47966c;
+        }
+        .form>p>input:focus{
+            outline:none;
+            border-radius:18px;
+            border:1px solid #a53c3c;
+        }
+        .form>p:nth-child(3)>input:nth-child(1){
+            width:136px;
+        }
+        .form #suiji{
+            display: inline-block;
+            width:100px;height:31px;
+            border:2px solid #a8a3a3;
+            background:ghostwhite;
+            position:relative;
+            top:4px;right:9px;
+            border-radius:20px;
+            cursor: pointer;
+            text-align: center;
+            font:28px "华文行楷";
+            line-height: 35px;
+            color:#a8a3a3;
+            opacity: 0.8;
+        }
+        p.bottom_g>input:first-child{
+            border:1px solid transparent;
+            background-color:wheat;
+            padding:2px 8px 0px 8px;
+            width:57px;
+            margin:26px 18px 0px 133px;
+            border-radius: 6px;
+            font:20px "华文行楷";
+            font-weight: 800;
+            color:darkslategray;
+            position: relative;
+        }
+        p.bottom_g>a{
+            position: relative;
+            top:-3px;
+            font-size: 16px;
+            color:rgb(60, 65, 56);
+        }
+        .form>p:first-child{margin-top:30px;}
+        .form>p>span:nth-child(2){
+            font-size:18px;
+            border:1px solid transparent;
+            display: inline-block;
+            width:17px;height:17px;
+            border-radius:50%;
+            text-align: center;
+            background-color:antiquewhite;
+            cursor: pointer;
+            position:relative;
+            right:35px;top:1px;
+            color:yellowgreen;
+        }
+        .form>p>span:nth-child(2).hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div>
+            <p class="top_g"><img src="./images/backstage/fruit_logo.png" alt="">
+            <span>果滋果味</span><span>后台管理系统</span>
+            </p>
+            <form class="form" method="">
+                <p>
+                    用户：<input type="text" name="backname" id="backname"  placeholder="  请输入6~24位用户名！"><span class="hide">x</span>
+                </p>
+                <p>
+                    密码：<input type="password" name="backpwd" id="backpwd"  placeholder="  请输入6~16位密码！"><span class="hide">x</span>
+                </p>
+                <p>
+                    验证：<input type="text" name="yz" id="yz" placeholder="  请输入有效验证码！">
+                    <!-- <span id="suiji">刷新</span> -->
+                    <input type="text" name="suiji" id="suiji" readonly placeholder="刷新">
+                </p>
+                <p class="bottom_g">
+                    <input type="submit" value="登录" id="but">
+                    <a href="http://127.0.0.1:3000/error404_1.html">找回密码</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- <script src="./scripts/ajax.js"></script> -->
+    <script src="boot/js/jquery-1.11.3.js"></script>
+    <script>
+        //显示快速清除小×
+        $(":input:text,:input:password").focus(function(){
+            $(this).next().removeClass("hide");
+        })
+        //快速清除填写内容
+        $(":input:text+span,:input:password+span").click(function(){
+           $(this).prev().val("");
+           $(this).addClass("hide"); 
+        })
+        //获取随机验证码4为数
+        function sj(){
+            var a=Math.floor(Math.random()*10);
+            var b=Math.floor(Math.random()*10);
+            var c=Math.floor(Math.random()*10);
+            var d=Math.floor(Math.random()*10);
+            $("#suiji").val(`${a}${b}${c}${d}`)
+            .css({color:"#9f35ff"})
+        }
+        sj();//进入页面时调取一次
+        var n=setInterval(sj,60000);
+        $("#suiji").click(function(){
+            sj();
+            clearInterval(n);
+        })
+        //验证获取焦点时，重新启动定时器
+        .prev().focus(function(){
+            var n=setInterval(sj,60000);
+        })
+   
+//查询用户和密码进行验证
+//验证用户名和密码数据库中是否存在
+/*这里是提交表单前的非空校验*/
+$("form").submit(function(){
+    var bname=$("#backname").val();
+    var bpwd=$("#backpwd").val();
+
+    if(bname==""||bname==null||bname==undefined){
+        alert("请输入用户名！");
+        return false;/*阻止表单提交*/
+    }else if(bpwd==""||bpwd==null||bpwd==undefined){
+        alert("请输入密码！");
+        return false;/*阻止表单提交*/
+    }else{
+        //alert("提交");
+        return true;
+    }
+})
+
+var search=location.search;
+if(search!=""){
+    //获取提交的值
+    var backname=search.split("&")[0].split("=")[1];
+    var backpwd=search.split("&")[1].split("=")[1];
+    var yan=parseInt(search.split("&")[2].split("=")[1]);
+    var sui=parseInt(search.split("&")[3].split("=")[1]);
+    $.ajax({
+        url:"http://127.0.0.1:3000/backstage/user",
+        data:{backname,backpwd},
+        type:"post",
+        dataType:"json",//自动解析
+        success:function(data){
+            //console.log(yan,sui)
+            if(data==1 && yan==sui){
+                alert("登陆成功！")
+                window.location="http://127.0.1:3000/backstage.html"
+            }else{
+                alert("无权限用户！");
+            }
+        }   
+    })
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/*顶部导航条*/
+#header{width:100%;position:relative;}
+.box-bg{
+    width:100%;
+    background: rgb(240, 160, 0);
+    height:35px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 502;
+}
+.color1{
+    background:rgba(41, 218, 10, 0.4);  
+}
+.color2{
+    background:rgba(248, 25, 5, 0.4);
+}
+.color3{
+    background:rgb(219, 216, 47, 0.4);
+}
+.color4{
+    background:rgba(175, 200, 230, 0.4);
+}
+.color5{
+    background:rgb(249, 250, 251);
+}
+.hmtop{
+    width:1200px;
+    position: relative;
+    /* max-width:1200px;
+    min-width: 860px; */
+    height:100px;
+    margin:auto;
+}
+
+.container{
+    height:35px;
+    line-height: 35px;
+    width:1200px;
+    color:#fff;
+    z-index: 503;
+    top:0;
+}
+.container a{
+    color:#fff;
+}
+.container>.ul-l{
+    float:left;
+}
+.container>.ul-l>li{
+    float:left;
+    margin-left:10px;
+}
+.container>.ul-l>li>a:hover{
+    color:#F03726;
+}
+.container>.ul-r{
+    float:right;
+}
+.container>.ul-r a:hover{
+    color:#F03726;
+}
+.container>.ul-r>li{
+    float:left;
+    padding:0 1em;
+    text-align: center;
+    position: relative;
+}
+.container>.ul-r>li>a{
+    position: relative;
+}
+/*搜索右边*/
+.container>.ul-r>li>ul{
+    visibility: hidden;
+    overflow: hidden;
+    height:0;
+    z-index: 5;
+    position: absolute;
+    transition: all 0.5s linear;
+    width: 200px;
+    left: 0;
+}
+.container>.ul-r>li>ul>li{
+    position: relative;
+    width:80px;
+    background: #F0A200;
+    text-align: center;
+    border:0;
+}
+#dropDown:hover>ul{
+    visibility: visible;
+    height:140px;
+}
+/*logo和搜索框*/
+.nav{
+    width:100%;
+    max-width: 1200px;
+    margin:50px 0 0 0; 
+    min-width: 990px;
+    position: relative;
+}
+.nav>.logo{
+    padding-left:5em;
+    float:left;
+}
+.nav>.search{
+    width:50%;
+    margin:auto 100px 20px;
+}
+.nav>.search>form{
+    width:100%;
+    border:1px solid #F03726;
+    height:46px;
+    box-sizing: border-box;
+}
+.nav>.search>form>input:first-child{
+    width: 80%;
+    float:left;
+    border:none;
+    height:100%;
+    padding-left:2%;
+}
+.nav>.search>form>input:last-child{
+    width:20%;
+    float:right;
+    border:none;
+    height:100%;
+    background: #f03726;
+    color:white;
+    cursor:pointer;
+}
+
+
+/* 特效 */
+.box {
+	width:100px;
+	height:100px;
+    position: absolute;
+    z-index:10;
+    top:-190px;
+    right:90px;
+	transform-style:preserve-3d;
+	margin:200px auto;
+	animation:turn 10s infinite linear;
+}
+.box:hover {
+	animation-duration:7s;
+}
+.box>div {
+	width:98px;
+	height:98px;
+	position:absolute;
+	border-radius:10px;
+	border:1px solid #999;
+	text-align:center;
+	line-height:100px;
+	color:#fff;
+	font-size:80px;
+	font-family:'微软雅黑';
+	transition:all 1s linear;
+	/* background:rgba(199, 24, 24, 0.9); */
+}
+.box div>img{
+    width:100px;height:100px;
+}
+.left {
+    transform:rotateY(-90deg) translateZ(50px);
+}
+.right {
+    transform:rotateY(90deg) translateZ(50px);
+}
+.top {
+	transform:rotateX(90deg) translateZ(50px);
+}
+.bottom {
+	transform:rotateX(-90deg) translateZ(50px);
+}
+.before {
+	transform:translateZ(50px);
+}
+.after {
+	transform:translateZ(-50px);
+}
+@keyframes turn {
+	from {
+	transform:rotateX(0deg) rotateY(0deg);
+}
+to {
+	transform:rotateX(360deg) rotateY(360deg);
+}
+}.box:hover .before {
+	transform:translateZ(50px);
+}
+.box:hover .after {
+	transform:translateZ(-50px);
+}
+.box:hover .left {
+	transform:rotateY(-90deg) translateZ(50px)
+}
+.box:hover .right {
+	transform:rotateY(90deg) translateZ(50px)
+}
+.box:hover .top {
+	transform:rotateX(90deg) translateZ(50px)
+}
+.box:hover .bottom {
+	transform:rotateX(-90deg) translateZ(50px)
+}
+

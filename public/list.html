@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表页</title>
+    <link rel="stylesheet" href="./style/list.css">
+    <script src="scripts/jquery-1.11.3.js"></script>
+    <script src="./boot/js/jquery.min.js"></script>
+    <script src="./scripts/list.js"></script>
+</head>
+<body> 
+    <!--页面头部-->
+    <div id="myHeader"></div>
+    <!-- 商品列表页内容 -->
+    <div class="content">
+        <!-- 上 分类 -->
+        <div class="list-top" id="list-top">
+            <p class="sosuo">
+                <span>全部&gt;<input type="text" placeholder="苹果"></span>
+                <span>共10000条结果</span>
+            </p>
+            <!-- 品牌 -->
+            <div class="brand">
+                <ul>
+                    <li class="one">
+                        <ul>
+                            <li>品牌</li>
+                            <li><a href="#">甘福园</a></li>
+                            <li><a href="#">王小二</a></li>
+                            <li><a href="#">易果生鲜</a></li>
+                            <li><a href="#">鲜丰队</a></li>
+                            <li><a href="#">+多选</a></li>
+                        </ul>
+                    </li>
+                    <li class="two">
+                        <ul>
+                            <li>&gt;生鲜水果</li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=苹果">苹果</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=橙子">橙子</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=桔子">桔子</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=奇异果">奇异果</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=梨">梨</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=百香果">百香果</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?kname=芒果">芒果</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?">其他水果</a></li>
+                        </ul>
+                    </li>
+                    <li class="three">
+                        <ul>
+                            <li>&gt;其他分类</li>
+                            <li><a href="#">新鲜水果</a></li>
+                            <li><a href="#">进口水果</a></li>
+                            <li><a href="http://127.0.0.1:3000/list.html?">更多</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="four">
+                        <ul>
+                            <li>水果种类</li>
+                            <li><a href="#">桔子</a></li>
+                            <li><a href="#">红富士</a></li>
+                            <li><a href="#">脐橙</a></li>
+                            <li><a href="#">冰糖心</a></li>
+                            <li><a href="#">菠萝蜜</a></li>
+                            <li><a href="#">琯溪蜜柚</a></li>
+                            <li><a href="#">黄心</a></li>
+                            <li><a href="#">其他</a></li>
+                        </ul>
+                    </li>
+                    <li class="five">
+                        <ul>
+                            <li>省份</li>
+                            <li><a href="#">四川省</a></li>
+                            <li><a href="#">广西壮族自治区</a></li>
+                            <li><a href="#">云南省</a></li>
+                            <li><a href="#">海南省</a></li>
+                            <li><a href="#">福建省</a></li>
+                            <li><a href="#">江苏省</a></li>
+                            <li><a href="#">陕西省</a></li>
+                            <li><a href="#">湖南省</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <p class="more"><a href="#">更多选项</a></p>
+        </div>
+        <!-- 列表 -->
+        <div class="middle" id="middle">
+            <!-- 查询条件 -->
+            <div class="select">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="td-1">
+                                <span>综合↓</span>
+                                <span>人气↓</span>
+                                <span>新品↓</span>
+                                <span>销量↓</span>
+                                <span>价格↑</span>
+                            </td>
+                            <td class="td-2">
+                                收货地:<select name="sheng" id="sheng">
+                                    <option value="0">--请选择--</option>
+                                    <option value="1">陕西省</option>
+                                    <option value="2">河南省</option>
+                                    <option value="3">山东省</option>
+                                    <option value="4">广西壮族自治区</option>
+                                    <option value="5">...</option>
+                                </select>
+                            </td>
+                            <td class="td-3">
+                                <span><input type="text" name="smZhi" id="smZhi" placeholder="￥请输入最小值" title="请输入最小值"></span>
+                                <span><input type="text" name="lgZhi" id="lgZhi" placeholder="￥请输入最大值" title="请输入最大值"></span>
+                                
+                            </td>
+                            <td class="td-4">
+                                <lable><input type="checkbox">包邮</lable><lable><input type="checkbox">折扣</lable> <span><select name="gengduo" id="gengduo">
+                                    <option value="0">更多</option>
+                                    <option value="0">规格</option>
+                                    <option value="0">参数</option>
+                                    <option value="0">样式</option>
+                                    <option value="0">种类</option>
+                                </select></span>
+                            </td>
+                            <td class="td-5">
+                                店名:<input type="text" name="dianming" id="dianming" placeholder="请输入店铺名">
+                            </td>
+                            <td class="td-6">
+                                <span>1/80</span><a href="#">&lt;</a> <a href="#">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 左边推荐 -->
+            <div class="list-left" id="say">
+                <div id="say1">
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=15">
+                                <img src="./images/pro_retrieval/lg_image/5b6e6a6eN2bb52c9f.jpg" alt=""/>
+                                <p>台湾无籽青柠檬</p>
+                                <p>￥99.90</p>
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=2">
+                                <img src="./images/pro_retrieval/lg_image/5b7bd4bbN6f5e9cdb.jpg" alt=""/>
+                                <p>奶油草莓</p>
+                                <p>￥129.90</p>
+                            </a>
+                        </li>                
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=10">
+                                <img src="./images/pro_retrieval/lg_image/130-3.png" alt=""/>
+                                <p>牛油果</p>
+                                <p>￥59.90</p>
+                            </a>                           
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=6">
+                                <img src="./images/pro_retrieval/lg_image/5b7641a5N32002747.jpg" alt=""/>
+                                <p>越南进口红心火龙果</p>
+                                <p>￥69.90</p>
+                            </a>      
+                        </li> 
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=8">
+                                <img src="./images/pro_retrieval/lg_image/95f4e2a11c947013.jpg" alt=""/>
+                                <p>陕西眉县 绿心猕猴桃</p>
+                                <p>￥49.90</p>
+                            </a>      
+                        </li> 
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=11">
+                                <img src="./images/pro_retrieval/lg_image/5a070320N09decf06.jpg" alt=""/>
+                                <p>烟台红富士苹果</p>
+                                <p>￥39.90</p>
+                            </a>      
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:3000/product_retrieval.html?kid=7">
+                                <img src="./images/pro_retrieval/lg_image/59e1bd05N6cb2de46.jpg" alt=""/>
+                                <p>泰国进口龙眼</p>
+                                <p>￥49.90</p>
+                            </a>      
+                        </li>  
+                    </ul>
+                </div>
+                <div id="say2"></div>
+            </div>
+            <!-- 商品列表 -->
+            <div class="list-right">
+                <div class="proList">
+                    <!-- <div class="list-item">
+                        <div class="texiao">
+                            <div ></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="item-img">
+                            <a href="#">
+                                <img src="./images/list/001.png">
+                            </a>
+                        </div>
+                        <p class="price">￥39.9</p>
+                        <p class="pname">广西百香果热带水果新鲜</p>
+                        <p>
+                            <a href="#">醇香果旗舰店</a>
+                        </p>
+                        <p class="item-bottom">
+                            <span>评论20万+</span>
+                            <span>月成交109</span>
+                            <a href="#"><img src="">联系</a>
+                        </p>
+                    </div> -->
+                </div>
+                <div class="bg-menubar " style="width:980px;height:30px;margin: 20px -25px ;">
+                    <ul class="pagination justify-content-end p-2">
+                        <li class="page-item disabled"><a  class="page-link" href="#">上一页</a></li>
+                        <li class="page-item active"><a  class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a  class="page-link" href="#">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <div id="myFooter"></div>
+    <script>
+        //导入头部文件//导入尾部文件
+        $(document).ready(function(){
+            $("#myHeader").load("header.html");
+            $("#myFooter").load("footer.html");
+        })
+    </script>
+</body>
+</html>

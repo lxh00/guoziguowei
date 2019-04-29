@@ -1,0 +1,236 @@
+div,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding: 0}
+.content{
+	width:1210px;
+	margin: 0 auto;
+}
+/*上分类*/
+.content>div#list-top{
+	margin-top:30px;
+	width:100%;
+	font-size: 16px;
+}
+.list-top ul>li{
+	list-style: none;
+}
+.list-top>p.sosuo{
+	display: flex;
+	justify-content: space-between;
+	margin-left:20px;
+	margin-bottom: 3px;
+}
+.list-top .sosuo input{
+	width:200px;
+	height:30px;
+}
+.list-top div.brand{
+	margin-top:10px;
+	border: 1px solid rgb(148, 139, 139);
+}
+.list-top div.brand>ul{
+	margin: 0;
+}
+.list-top div.brand>ul>li>ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.list-top div.brand>ul>li{
+	border-bottom: 1px solid rgb(124, 118, 118);
+}
+div.brand>ul>li>ul>li{
+	float: left;
+	padding:3px 20px;
+	color:rgb(76, 175, 125);
+	
+}
+.list-top div.brand>ul>li>ul>li>a{
+	text-decoration: none;
+	color:rgb(54, 53, 53);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.list-top div.brand>ul>li>ul>li:first-child{
+	width: 150px;
+	background-color: #ddf;
+	font-weight: 600;
+}
+.list-top li.one>ul>li:last-child,li.three>ul>li:last-child{
+	float:right;
+}
+.list-top p.more{
+	text-align: right;
+}	
+.list-top p.more>a{
+	background-color: rgb(121, 121, 219); 
+}
+/*列表*/
+#middle .list-left,#middle .list-right{
+	border:1px solid rgb(195, 186, 186);
+}
+#middle,#middle tbody>tr{
+	display: block;
+	width:1210px;
+	margin-top: 0px;
+}
+#middle li{
+	list-style: none;
+}
+/*查询条件*/
+#middle .select>table>tbody td{
+	border:1px solid rgb(124, 118, 118);
+	padding: 0px;
+	font-size:16px;
+	background-color: rgb(238, 224, 224);
+}
+#middle .select>table>tbody td.td-4{
+	padding-left:3px;
+}
+.middle .select>table>tbody td.td-1{
+	background-color:rgb(238, 224, 224);
+}
+.middle .select>table>tbody td.td-1>span,
+.middle .select td.td-3>span:first-child{
+	display: inline-block;
+	border-right:1px solid rgb(145, 141, 141);
+	cursor: pointer;
+}
+.middle .select>table>tbody td.td-1>span:last-child{
+	border:0;
+}
+.middle .select td.td-3 input,.select td.td-5 input{
+	outline: none;
+	border:0;
+	height: 100%;
+	width:115px;
+	background-color:rgb(230, 223, 223);
+}
+#middle .select td.td-6{
+	border: 0;
+	padding-left:180px;
+	background-color:#F5F5F5;
+}
+/*左边推荐*/
+#middle .list-left{
+	overflow: hidden;
+	width:242px;height:1572px;
+	background-color:#fff;
+	float: left;
+	text-align: center;
+	margin-top:10px;
+}
+#middle .list-right{
+	float: right;
+	width:80%;
+}
+#middle::after{
+   display: block;
+   content: "";
+   clear: both;
+}
+#say p{
+	font-size: 18px;
+	font-weight: 600;
+	color:rgb(58, 55, 55);
+}
+#say a>p:last-child{
+	color:red;
+}
+#say img{
+    width: 210px;
+    height:210px;
+    
+}
+/*商品列表*/
+.middle .proList{
+	display: flex;
+	justify-content:flex-start;
+	flex-wrap: wrap;
+	margin-top:10px;
+	
+}
+.middle .list-item{
+	width:231px;
+	margin-bottom: 10px;
+	margin-left:10px;
+	border:1px solid rgba(185, 184, 184, 0.219);
+	background-color: rgba(228, 222, 222, 0.568);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
+} 
+.middle .list-item:hover{
+	box-shadow: 0 0 3px 4px rgb(143, 141, 141);
+}
+/*特效*/
+div.list-item>div.texiao{
+	position: relative;
+	top:144px;
+	left:-426px;
+	transform: rotate(-45deg);
+	transform-origin: center;
+}
+div.list-item>div:first-child>div{
+	position: absolute;
+    width:800px;
+	height:80px;
+	background-color:rgba(228, 175, 197, 0.137);
+	box-shadow: 0 0 5px 20px rgba(219, 163, 200, 0.5);
+}
+div.list-item>div:first-child>div:nth-child(1){
+    top:0px;left:0px;
+}
+div.list-item>div:first-child>div:nth-child(2){
+    top:-50px;left:0px;
+}
+div.list-item>div:first-child>div:nth-child(3){
+    top:-100px;left:0px;
+}
+div.list-item>div:first-child>div:nth-child(4){
+    top:-150px;left:0px;
+}
+div.list-item>div:first-child>div:nth-child(5){
+    top:-200px;left:0px;
+}
+div.list-item>div:first-child>div:nth-child(6){
+    top:-250px;left:0px;
+}
+@keyframes tImg{
+	0%{transform: rotate(-45deg);}
+	100%{transform: translate(250px,400px) rotate(-45deg);}
+}
+.list-item:hover div.texiao{
+	animation: tImg 2s linear infinite; 
+}
+div.item-img img{
+    width:231px;
+}
+/*列表项目内部样式*/
+.list-item>p{
+	margin:2px 3px;
+}
+.list-item>p>a{
+	color:rgb(0, 110, 255);
+}
+.list-item>p.price{
+	color:red;
+	font-size:22px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.list-item>p.pname{
+
+}
+.list-item>p.item-bottom{
+	font-size:14px;
+	color:rgb(121, 119, 119);
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+

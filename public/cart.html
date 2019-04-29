@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta name="Generator" content="EditPlus®">
+  	<meta name="Author" content="">
+  	<meta name="Keywords" content="">
+  	<meta name="Description" content="">
+	  <title>购物车1.0</title>
+	  
+  	<link rel="stylesheet" href="./style/cart.css" type="text/css">
+	<script src="scripts/jquery-1.11.3.js"></script>
+	<script src="./boot/js/jquery.min.js"></script>
+	
+	
+</head>
+<body>
+	<!--页面头部-->
+	<div id="myHeader"></div>
+	<!--购物车-->
+	<div id="container">
+		<!--主体-->
+		<div id="main">
+			<!-- 上方标题栏(工具栏)-->
+			<div class="title">
+				<p class="check-box">
+					<input type="checkbox" name="checkAll" id="checkAll">
+					全选
+				</p>
+				<p class="goods">商品</p>
+				<p class="price">单价</p>
+				<p class="count">数量</p>
+				<p class="sum">小计<p>
+				<p class="action">操作</p>
+			</div>
+
+			<!-- 下方商品记录-->
+			<div class="content">
+				<!-- 购物车为空时 -->
+                <!-- <p class="kong"><img src="./images/index/header/2.png">您的购物车还是空的<a href="http://127.0.0.1:3000/index.html">去购物</a></p> -->
+				<!--以下内容后期需要动态生成-->
+				<!-- <div class="g-item">
+					<p class="check-box">
+						<input type="checkbox" name="check" >
+						<img src="images/cart/qingpingguo.png">
+					</p>
+					<p class="goods">
+						青苹果乐园1青苹果乐园1青苹果乐园1<br>
+						<span>商品种类</span>
+					</p>
+					<p class="price">&yen;188</p>
+					<p class="count">
+						<a href="javascript:void(0)" class="minus">-</a>
+						<input type="text" value="1">
+						<a href="javascript:void(0)" class="add">+</a>
+					</p>
+					<p class="sum">
+						<b>&yen;188</b>
+					</p>
+					<p class="action" data-id="id">移除</p>
+				</div> -->
+			</div>
+		
+		</div>
+		<!-- 分页 -->
+		<div class="bg-menubar " style="width:980px;margin: 0 auto;">
+			<ul class="pagination justify-content-end p-2">
+				<li class="page-item disabled"><a  class="page-link" href="#">上一页</a></li>
+				<li class="page-item active"><a  class="page-link" href="#">1</a></li>
+				<li class="page-item"><a  class="page-link" href="#">2</a></li>
+				<li class="page-item"><a  class="page-link" href="#">3</a></li>
+				<li class="page-item"><a  class="page-link" href="#">4</a></li>
+				<li class="page-item"><a  class="page-link" href="#">5</a></li>
+				<li class="page-item"><a  class="page-link" href="#">...</a></li>
+				<li class="page-item"><a  class="page-link" href="#">下一页</a></li>
+			</ul>
+		</div>
+		<div id="cart-toolbar">
+			<!-- 5. 底部 -->
+			<div id="xuanxiang">
+				<p>清空已选项</p>
+				<p>清空失效宝贝</p>
+			</div>
+			<div class="right-toolbar">
+				<p class="submit-count">
+					已选择<span></span>件商品
+				</p>
+				<p class="submit-price">
+					共计 : <span></span>
+				</p>
+				<p class="submit-btn">去结算</p>
+			</div>
+		</div>
+	</div>
+	<!--猜您喜欢的商品-->
+ 	<div class="guessYouLink">
+	    <div class="guess-box">
+	        <div class="guess-title" style="text-align:center;font-size:20px;">
+	            <i>❤</i>
+	             猜 您 喜 欢
+	        </div>
+	        <ul>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/003.png" alt="">
+	                    <p>杨氏YANG’S 精品脐橙 约3kg装 钻石果 年货礼盒</p>
+	                    <p>
+	                        ￥10.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/001.png" alt="">
+	                    <p>山东章姬奶油草莓 约重250g/12-15颗 新鲜水果</p>
+	                    <p>
+	                        ￥10.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/004.png" alt="">
+	                    <p>攀枝花枇杷 大果25-40g 约40个 2.5斤精品果 新鲜水果生鲜四川特产 枇杷</p>
+	                    <p>
+	                        ￥20.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/002.png" alt="">
+	                    <p>南非西柚红心蜜柚 非三红柚子6个装 新鲜水果（单果约200g左右）</p>
+	                    <p>
+	                        ￥30.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/010.png" alt="">
+	                    <p>陕西眉县 徐香绿心猕猴桃 22个板盒装 单果90-105g 新鲜水果</p>
+	                    <p>
+	                        ￥30.00
+	                        <span></span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/007.png" alt="">
+	                    <p>新疆阿克苏冰糖心苹果10斤装 脆甜糖心红富士水果 新疆特产优选果 </p>
+	                    <p>
+	                        ￥20.00
+	                        <span></span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/009.png" alt="">
+	                    <p>玉芒 青芒果 2.5kg装 单果250g以上 新鲜水果</p>
+	                    <p>
+	                        ￥40.00
+	                        <span></span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/005.png" alt="">
+	                    <p>百香果 精品中果12个装 单果50-80g 新鲜水果</p>
+	                    <p>
+	                        ￥20.00
+	                        <span></span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/008.png" alt="">
+	                    <p>现摘漳州杨桃 新鲜水果 台湾品种福建种植发货 树上熟不酸装 现摘发货 （送酸梅粉） 黄色 杨桃水果2个装 单果200g+</p>
+	                    <p>
+	                        ￥30.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <img src="./images/index/section/006.png" alt="">
+	                    <p>越南进口白心火龙果4个装&nbsp;&nbsp;&nbsp;&nbsp;中果 单果375-500g 新鲜水果</p>
+	                    <p>
+	                        ￥40.00
+	                        <span>优惠</span>
+	                    </p>
+	                </a>
+	            </li>
+	        </ul>
+		</div>
+	</div>
+	<!--页面底部-->
+	<div id="myFooter"></div>
+	
+	<script src="scripts/cart.js"></script>
+	<script>
+		//导入头部文件//导入尾部文件
+		$(document).ready(function(){
+			$("#myHeader").load("header.html");
+			$("#myFooter").load("footer.html");
+		})
+	</script>
+</body>
+</html>

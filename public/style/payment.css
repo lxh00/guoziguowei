@@ -1,0 +1,273 @@
+
+/*确认订单页面*/
+.pay-content{
+    width:1100px;
+    border:1px solid transparent;
+    margin:auto;
+    margin-top:-24px;
+}
+.pay-top,.pay-section{
+    width:100%;
+}
+/*订单页上部分*/
+.pay-top{
+    position: relative;
+    top:45px;
+    display: flex;
+    justify-content: space-between;
+}
+.pay-top>ul>li{
+    padding-left:10px;
+    list-style:none;
+    float: left;
+    line-height: 20px;
+    background-color:rgb(167, 164, 164);
+    color:#000;
+}
+.pay-top>ul>li:nth-child(odd){
+    width:130px;height:20px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.pay-top>ul>li:nth-child(even){
+    border:10px solid rgb(255, 255, 255);
+    border-left:10px solid rgb(124, 119, 119);
+}
+.pay-top>ul>li.li-active{
+    background-color:#f00;
+    border-left:10px solid #f00;
+    color:#fff;
+}
+/*订单主体页*/
+.pay-section>p:first-child{
+    font-size:24px;
+    font-weight: bolder;
+    margin-left:10px;
+    margin-bottom:5px; 
+}
+/*收货地址*/
+.pay-city{
+    position: relative;
+}
+.city-one{
+    border:1px solid rgb(148, 144, 144);
+}
+.city-one>p:first-child,.zhifu>p:first-child,.dingdan>p:first-child{
+    border-bottom: 1px solid rgb(150, 146, 146);
+    margin: 0px;
+    padding: 5px 10px;
+    color:rgb(61, 60, 60);
+    font-size:18px;
+    font-weight: 600;
+}
+.city-one>p:first-child>button,.dingdan>p:first-child>a{
+    float: right;
+}
+.dizhi>ul{
+    padding:0px;
+    margin:5px;
+    height:55px;
+    border:2px solid rgba(139, 136, 136, 0.609);
+    background-color: rgba(214, 221, 217, 0.568);
+}
+.dizhi>ul.dz-active{
+    border:2px solid rgb(163, 105, 105);
+    background-color:rgb(222, 236, 236);
+    box-shadow: 0 0 3px 3px rgb(167, 122, 122);
+}
+.dizhi>ul:hover{
+    border:2px solid rgb(212, 104, 226);
+    background-color:rgb(203, 199, 207);
+}
+.dizhi>ul>li{
+    list-style: none;
+    padding:0px;
+    margin:0px 5px;
+    border-bottom: 1px solid rgb(102, 100, 100);
+    color:rgb(31, 30, 31);
+}
+.dizhi>ul>li:first-child>b:nth-child(3){
+    margin-left:100px; 
+}
+.dizhi>ul>li:last-child>a{
+    float: right;
+    color:#f00;
+}
+/* 收货地址列表 */
+.city-list{
+    border:1px solid rgb(172, 161, 230);
+    width:100%;
+    background-color:rgb(194, 228, 178);
+    position: absolute;
+    top:38px;
+    left:0px;
+    display:none;
+}
+.city-list>ul>li{
+    border-bottom: 1px solid rgb(143, 138, 138);
+    margin:15px 20px 5px;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+.city-list>ul>li:hover{
+    background-color:rgb(228, 165, 225);
+}
+.city-list>ul>li>span{
+    margin:0px 15px;
+}
+.city-list>ul>li>button{
+    float:right;
+    margin-left:5px; 
+    padding: 0 5px;
+}
+/*收货地址编辑*/
+#city-update{
+    border:1px solid rgb(190, 184, 221);
+    width:50%;
+    background-image: linear-gradient(135deg,rgba(146, 179, 93, 0.808),rgba(145, 65, 165, 0.883));
+    position: absolute;
+    z-index: 5;
+    top:38px;
+    left:250px;
+    height:350px;
+    display: none;
+    text-align: center;
+}
+#city-update>p:first-child{
+    margin-top: 10px;
+    font-size:24px;
+    color:rgb(199, 54, 54);
+}
+#city-update>table{
+    margin: 0 auto;
+}
+#city-update>table>tbody>tr>td{
+    padding:5px 0;
+}
+#city-update>table>tbody>tr>td>input{
+    width:280px;
+    height:30px;
+}
+#city-update>p>button{
+    margin:0 10px;
+}
+/*支付方式*/
+.zhifu{
+    width:100%;
+    height:100px;
+    border:1px solid rgb(124, 121, 121);
+    margin: 10px 0;
+}
+.zhifu>div{
+    margin:16px 54px;
+    font-size:14px;
+}
+.zhifu>div>span{
+    position: relative;
+    top:0px;
+}
+.zhifu>div>span:nth-child(3){
+    margin-left:30px;
+    color:#f00;
+}
+/*订单信息*/
+#dingdan{
+    width:1100px;
+    border:1px solid rgb(139, 135, 135);
+}
+#dingdan>p:first-child>a{
+    color:red;
+    font-size:14px;
+}
+#dingdan>p:first-child>a:hover{
+    color:rgb(240, 152, 152);
+    font-size:14px;
+}
+#dingdan>table{
+    width:1030px;
+    margin:10px auto;
+    border:1px solid transparent;
+}
+#dingdan>#table>tbody>tr{
+    border-bottom:1px solid rgb(124, 108, 108);
+    height:90px;
+}
+#dingdna>#table>thead>tr>th{
+    text-align: center;
+}
+#dingdan>#table>tr>td{
+    border-bottom:1px solid transparent;
+    padding: 5px;
+    text-align: center
+}
+#dingdan>#table>thead>tr{
+    background-color:rgb(170, 164, 164);
+}
+/*提交订单*/
+.tijiao{
+    width:100%;height:50px;
+    text-align: right;
+   margin: 20px 0;
+  
+}
+.tijiao>p{
+     margin-right:55px;
+     font-weight: 600;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.tijiao>p>button{
+  outline:none;
+  cursor: pointer;
+  width:150px;height:46px;
+  line-height: 44px;
+  border-radius: 20px;
+  margin-left: 40px;
+  font-size:24px;
+  background-color:rgba(255, 0, 0, 0.746);
+}
+
+
+/*付款的样式*/
+#fukuan{
+    width:500px;
+    height:600px;
+    /* background-color:rgb(155, 105, 105); */
+    position:fixed;
+    top:20%;left: 37%;
+    z-index: 20;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: none;
+    background-size:500px 600px;
+}
+#fukuan>p:first-child{
+    text-align: right;
+    margin:7px 17px 5px 0px;
+    font-size:24px;
+}
+#fukuan>p:first-child>span{
+    cursor: pointer;
+}
+#fukuan>p:last-child{
+    width:500px;
+    vertical-align: top;
+    position:absolute;
+    left:0px;bottom:10px;
+    text-align: center;
+    font-size:28px;
+    font-weight: 600;
+}
+#fukuan>p:last-child>span:last-child{
+    color:#f00;
+    font-size:40px;
+}
+#beijing{
+    width:100%;
+    height:1000px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index: 19;
+    background-color:rgba(229, 194, 194, 0.534);
+    display: none;
+}

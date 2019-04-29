@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!--引入boot的文件，引入顺序要求-->
+    <!-- <link rel="stylesheet" href="./boot/css/bootstrap.css"/> -->
+    <script src="./boot/js/jquery.min.js"></script>
+    <script src="./boot/js/popper.min.js"></script>
+    <!-- <script src="./boot/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="./style/base.css"/>
+    <link rel="stylesheet" href="./style/header.css"/>
+</head>
+<style>
+    .left {
+    background-image: url("./images/index/section/001.png")
+    }
+    .right {
+        background-image: url('images/index/section/002.png')
+    }
+    .top {background-image: url("./images/index/section/005.png")
+    }
+    .bottom {background-image: url("./images/index/section/007.png")
+    }
+    .before {background-image: url("./images/index/section/010.png")
+    }
+    .after {background-image: url("./images/index/section/008.png")
+    }
+    .box>div{
+        background-size: 100px;
+    }
+   
+</style>
+<body>
+<!--头部logo搜索框-->
+<div id="header">
+    <div class="box-bg">
+        <!--顶部导航条-->
+        <div class="container ">
+            <ul class="ul-l">
+                <li>
+                    你好,请
+                    <a style="color:crimson;" href="http://127.0.0.1:3000/user_login.html" target="_self">登录&nbsp;</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:3000/user_login.html">免费注册</a>
+                </li>
+            </ul>
+            <ul class="ul-r">
+                <li><a href="http://127.0.0.1:3000/index.html">商城</a></li>
+                <li id="dropDown">
+                    <a href="javascript:;">个人中心</a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:3000/error_404.html">个人资料</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:3000/order.html">我的交易</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:3000/order.html">我的资产</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:3000/error_404.html">我的小窝</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="shopCart">
+                    <a href="http://127.0.0.1:3000/cart.html">购物车</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:3000/error_404.html">收藏夹</a>
+                </li>
+                <li>皮肤→
+                    <select id="mycolor" style="font-size:10px;">
+                        <option value="color5">-请选择-</option>
+                        <option value="color1">春日温暖</option>
+                        <option value="color2">烈阳高照</option>
+                        <option value="color3">秋风瑟瑟</option>
+                        <option value="color4">寒风冰裂</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hmtop">
+        <!--logo和搜索框-->
+        <div class="nav">
+            <div class="logo">
+                <a href="#">
+                    <img style="width:150px;" src="./images/index/header/2.png" alt=""/>
+                </a>
+            </div>
+            <div class="search">
+                <form action="/product/list" method="GET" class="clear">
+                    <input type="text" name="kname" id="search" placeholder="搜索你所喜欢的"/>
+                    <input type="button" value="搜索"/>
+                </form>
+            </div>
+        </div>
+        <!-- 动画效果 -->
+    <div class="box">
+        <div class="top"></div>
+
+        <div class="bottom"></div>
+
+        <div class="left"></div>
+
+        <div class="right"></div>
+
+        <div class="before"></div>
+
+        <div class="after"></div>
+    </div>
+    </div>
+    
+</div>
+<script>
+      //1:获取下拉列表
+      var mycolor = document.getElementById("mycolor"); 
+      //2:绑定事件 onchange
+      mycolor.onchange = function(){
+        //2.1 获取当前 value
+        var val = this.value;
+        //2.2 将value 应用body元素样式
+        document.body.className = val;
+        //2.3 将value保存localStorage值
+        localStorage.setItem("style",val);// localStorage 这个特性主要是用来作为本地存储来使用的
+      }
+      //3:获取localStorage值如果存在
+      var style = localStorage.getItem("style");
+      //4:直接应用body元素样式
+      if(style){
+        document.body.className = style;
+      }
+
+
+    $(function(){
+        //1.获取sessionStorage数据
+            var uname=sessionStorage.getItem("uname");
+            var div=$("#header div.container>ul:first-child>li:first-child");
+            // if(uname){
+            //     //2.1把值传到头部
+            //     div.html(`您好!欢迎${uname} <span style="color:red;cursor: pointer;">退出</span>`);
+            //     //console.log(uname);
+            // }else{
+            //     //2.2修改头部信息
+            //     div.html(`你好,请<a href="http://127.0.0.1:3000/user_login.html">登录&nbsp;</a>`);
+            // }
+            //3.每次进入页面时，判断用户是否登录
+            $.ajax({
+                url:"http://127.0.0.1:3000/user/isLogin",
+                type:"get",
+                dataType:"json",
+                success:function(data){
+                    //console.log(data);
+                    if(data.code==1){
+                        //3.1修改头信息
+                        div.html(`你好,请<a style="color:crimson;" href="http://127.0.0.1:3000/user_login.html"  target="_self">登录&nbsp;</a>`)
+                    }else{
+                        uname=data.msg[0].username;
+                        div.html(`您好!欢迎${uname} <span style="color:red;cursor: pointer;">退出</span>`);
+                        //2.点击退出，清除uname的值
+                        $("#header div.container>ul:first-child>li:first-child>span").click(function(){
+                            //2.1清除uname
+                            sessionStorage.removeItem("uname");
+                            //2.2发送ajax请求，清除服务器端的session中的uid;
+                            $.ajax({
+                                url:"http://127.0.0.1:3000/user/delSession",
+                                type:"get",
+                                dataType:"json",
+                                success:function(data){
+                                    console.log(data);
+                                    if(data.code==1){
+                                        //2.3修改头信息
+                                        div.html(`你好,请<a style="color:crimson;" href="http://127.0.0.1:3000/user_login.html" target="_self">登录&nbsp;</a>`)
+                                        //2.4刷新当前页面
+                                        setTimeout(function(){
+                                            history.go(0);
+                                        },1000)
+                                    }
+                                }
+                            })
+
+                            
+                        })
+
+
+
+                    }
+                }
+            })
+    })
+</script>
+<!-- <script>
+	window.onbeforeunload = function (){
+		if(window.event.clientY>0||window.event.altKey){
+			window.onbeforeunload = null;
+		}else{
+		$.ajax({
+            url:"http://127.0.0.1:3000/user/delSession",
+            type:"get",
+            dataType:"json",
+            success:function(data){
+            }
+        })
+	
+    }
+}
+  </script> -->
+</html>

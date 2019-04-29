@@ -1,0 +1,184 @@
+*{margin:0px;padding:0px;}
+body{
+	/* position: relative; */
+	background-repeat: no-repeat;
+	background-size:cover;
+	/* background-image:linear-gradient(to bottom,#79d0d8,#7bad90); */
+}
+.continer{
+	width:350px;height:450px;
+	background-color:rgba(255,255,255,0.6);
+	position: absolute;
+	top:20%;
+	right:10%;
+	z-index: 2;
+	border-radius: 5px;
+	transform-origin:center; 
+}
+.qiehuan{
+	text-align: center;
+	font-size:16px;
+	font-weight: 800;
+	border-radius: 5px;
+}
+.dian{
+	background-color:rgba(248, 247, 242, 0.5);
+	color:#131212;
+	border-bottom:2px solid #41b2eb;
+}
+.weidian{
+	background-color:rgba(255, 0, 34, 0.5);
+	color:#dbd4d4;
+}
+.qiehuan>span{
+	display: inline-block;
+	width:175px;
+	cursor: pointer;
+	padding-top:10px;
+	padding-bottom:5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.qc{
+	display: inline-block;
+	width:25px;height:25px;
+	border-radius: 50%;
+	background-image:radial-gradient(25px at center center,#d0d5d6 0%,rgb(233, 221, 229) 100%);
+	position: relative;
+	left:-33px;
+	text-align: center;
+	padding-top:2px; 
+	color:#a7a2a2;
+	cursor: pointer;
+}
+/*用户登录*/
+.login,.zhuce{
+	padding-top:10px;
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+.login>p,.zhuce>p{
+	margin-left:30px;
+	margin-bottom:25px;
+}
+.login>p:first-child{
+	margin-top:30px;
+	margin-bottom:0px;
+	height:20px;
+	padding-left:38px;
+	font-size: 12px;
+	color:red;
+}
+.login>p>i,.zhuce>p>i{
+	position: relative;
+	top:4px;
+	font-size:26px;
+}
+.name>input,.upwd>input{
+    width:240px;height:35px;
+	/* outline: none; */
+	/* border:0px; */
+	margin-left:10px;
+}
+.login>p:nth-child(4){
+	font-size:14px;
+	display: flex;
+	justify-content: space-between;
+	margin-left:45px;
+	margin-right:60px;
+	
+}
+p:nth-child(4) a{
+	color:#2c54b1;
+	outline: none;
+}
+.login>p:nth-child(4) a:active,
+.login>p:last-child>a:active{
+	color: rgb(191, 224, 149);
+}
+p>button,#zhuce{
+	width:290px;height:35px;
+	background-color: #0e90d2;
+	border:0;
+	color:#ffffff;
+	font-size:16px;
+	cursor: pointer;
+}
+.login>p:nth-child(5)>button:hover{
+	background-color: #41b2eb;
+}
+.login>p:last-child>a{
+	color:#131212;
+	outline: none;
+	text-decoration: none;
+}
+.login>p:last-child span.icon{
+	margin-left:8px;
+	font-size:20px;
+}
+.login>p:last-child a:last-child>span.icon{
+	color: #0ed23f;
+}
+.login>p:last-child a:nth-child(2)>span.icon{
+	color:#d22b0e;
+}
+.login>p:last-child a:first-child>span.icon{
+	color: #464141;
+}
+/*注册不同的样式*/
+.zhuce>p{
+	margin-top: 20px;
+	margin-bottom: 15px;
+	height:50px;
+}
+.zhuce>p>span{
+	padding-left:37px;
+	font-size: 12px;
+	color:red;  
+}
+.zhuce p:nth-child(4),p:last-child{
+	margin-bottom: -15px;
+	margin-top: 10px;
+}
+.zhuce p:nth-child(4){
+	font-size: 14px;
+	padding-left:35px;
+}
+#bgLb{
+	position: absolute;
+	top:0;
+	left:0px;
+	width:1900px;
+	height:980px;
+	overflow: hidden;
+	z-index: -15;
+}
+#bgLb>ul{
+	width:10000px;
+	height:100%;
+	margin-left:0px;padding:0;
+	transition-duration:5s;
+}
+#bgLb>ul>li{
+	width:2000px;
+    height: 100%;
+	margin:0;padding:0;
+	float:left;
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+/*登录完成后的效果*/
+@keyframes turn{
+    0%{
+		transform:translate(0) rotate3D(0,0,1,0deg) scale(1,1) ;
+	}
+	100%{
+		transform:translate(-1000px) rotate3D(0,0,1,360deg) scale(0,0) ;
+	}
+}
+/* .rotate{
+	animation: turn 2s 1 linear;
+} */

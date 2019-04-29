@@ -1,0 +1,73 @@
+/*���*/
+.w-200{width:200px;height:1400px;float: left;}
+.bg_color_1{background-color:#3c3c3c;}
+ul li a{color:#8095a8;font-size:13px;}
+ul li a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+.ul_hover >li:hover{background-color:#e0e0e0;}
+.ul_hover >li>a:hover{color:#5b5b5b;}
+.radius_1>img{border-radius:50%;}
+.radius_2{border-radius:3px;}
+.card_hover:hover{background-color:#5b5b5b;}
+.form-control:visited{border:3px;}
+.font_blank{color:#5b5b5b;}
+.font_blank:hover{color:#3c3c3c;}
+div>span:nth-child(1),div>span>a{font-size:13px;color:#3c3c3c;}
+div>span:nth-child(2){font-size:13px;color:#fff;}
+p>span:nth-child(1){font-size:32px;color:#3c3c3c;}
+div>p>span,.table_font{font-size:13px;}
+.shadow_1>div,.shadow_2{box-shadow:1px 2px 2px 1px #6d6d6d;}
+.width_right{width:1660px;float: left;}
+.width_400{width:400px;}
+.width_xx{width:540px;}
+.width_sx{width:815px;}
+.position_rela{position:relative;left:539px;bottom: 460px;}
+/*���ݿ���*/
+#userTable>div:first-child>p>span{font-size:26px;}
+#userTable>div:first-child>ul>li a,
+#userTable>div:first-child>ul>li,
+#userTable>div:nth-child(2)>p>span>a{
+    color:#aaaaaa;font-weight:700;}
+#userTable>div:first-child>ul>li a:hover,
+#userTable>div:nth-child(2)>p>span>a:hover{
+    color:#666666;text-decoration: none;}
+#userTable .size_20{font-size:20px;}
+#userTable>div:nth-child(2)>form:nth-child(2)>div,
+.font_14{
+    font-size:13px;
+    font-weight: 400;
+}
+#userTable .pagination>li>a{
+    display:inline-block;
+    width:30px;
+    height:26px;
+}
+#userTable table tr{
+    text-align: center;
+    vertical-align:middle;}
+#userTable table>tbody>tr>td:first-child,
+#userTable table>thead>tr{
+    font-weight: 700;
+    text-align: center;
+    vertical-align:middle;
+}
+#userTable table td{
+    padding:2px;
+}
+#userTable table>tbody>tr:nth-child(2n){
+    background:#f6f0f0;
+}
+#userTable .pagination>li{height: 30px;}
+.active{background-color:#dddddd;}
+#userTable .pagination>li:hover{background-color:#dddddd;}
+.input_up{width:6rem;border:0px;border-bottom:1px solid rgb(81, 116, 108);}
+.input_up:focus{outline: none;}
+/*是否隐藏*/
+.hide{display:none;}
+.visi{display: block;}
+
+
+
+

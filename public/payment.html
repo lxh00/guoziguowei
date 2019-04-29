@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>确认订单</title>
+    <link rel="stylesheet" href="./style/payment.css">
+    <script src="scripts/jquery-1.11.3.js"></script>
+    <script src="./boot/js/jquery.min.js"></script>
+    <script src="./scripts/payment.js"></script>
+    <style>
+        #fukuan{
+            background-image: url("./images/tuijian/zf-1.png");
+        }
+    </style>
+</head>
+<body>
+    <!--页面头部-->
+    <div id="myHeader"></div>
+    <div style="width:100%;height:110px;background-image:url('./images/tuijian/dddd.jpg');margin-top:41px;"></div>
+    <!-- 订单确认页面 -->
+    <div class="pay-content">
+        <!-- 订单页上部分 -->
+        <div class="pay-top">
+            <div></div>
+            <ul>
+                <li class="li-active">1 我的购物车</li>
+                <li class="li-active"></li>
+                <li class="li-active">2 确认订单信息</li>
+                <li class="li-active"></li>
+                <li>3 成功提交订单</li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- 订单页主体 -->
+        <div class="pay-section">
+            <p>确认订单<span style="color:rgb(243, 17, 17);font-size:18px;margin-left:30px;">订单已生成，30分00秒后跳转到<a href="127.0.0.1:3000/index.html">首页</a>!</span></p>
+            <!-- 收货地址 -->
+            <div class="pay-city">
+                <!-- 默认显示一条地址 -->
+                <div class="city-one">
+                    <p>收货地址
+                        <button id="btnGuan">管理收货地址</button>
+                    </p>
+                    <div class="dizhi">
+                        <ul class="dz-active" data-cid="">
+                            <!-- <li>
+                                <b>收货人：</b><span>王小二</span>
+                                <b>联系电话：</b>
+                                <span>18888888888</span>
+                            </li>
+                            <li>
+                                <b>收货地址：</b><span>陕西省西安市碑林区中铁国际一号000号</span>
+                                <a href="#">设置为默认地址</a> 
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- 收货地址选择，弹出 -->
+                <div class="city-list">
+                    <ul style="margin-bottom:0px;">
+                        <!-- <li>
+                            <b>王小二</b><span>18812345678</span><span>陕西省西安市碑林区中铁国际一号000号</span><button>编辑</button>
+                        </li> -->
+                        
+                    </ul>
+                    <p style="margin:0;"><button style="float:right;margin:10px 20px; ">+新增收货地址</button></p>
+                </div>
+                <!-- 收货地址编辑 -->
+                <div class="city-update" id="city-update" >
+                    <p>-------收货地址信息管理-------<span style="position:relative;right:-82px;top:-3px;cursor: pointer;">X</span></p>
+                    <table>
+                        <!-- <tbody>
+                                <tr>
+                                <td>收货人：</td>
+                                <td><input type="text" name="cname" id="" placeholder="请输入收件人姓名"></td>
+                            </tr>
+                            <tr>
+                                <td>电  话：</td>
+                                <td><input type="phone" name="mobile" placeholder="请输入联系人电话"></td>
+                            </tr>
+                            <tr>
+                                <td>省  份：</td>
+                                <td><input type="text" name="sheng" placeholder="请输入所在省份"></td>
+                            </tr>
+                            <tr>
+                                <td>城  市：</td>
+                                <td><input type="text" name="city" placeholder="请输入所在城市"></td>
+                            </tr>
+                            <tr>
+                                <td>县/区：</td>
+                                <td><input type="text" name="xianqu" placeholder="请输入所在的县或区"></td>
+                            </tr>
+                            <tr>
+                                <td>街  道：</td>
+                                <td><input type="text" name="jiedao" placeholder="请输入详细的街道信息"></td>
+                            </tr>
+                            <tr >
+                                <td></td>
+                                <td><button>提交</button></td>
+                            </tr>
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+            <!-- 支付方式 -->
+            <div class="zhifu">
+                <p>支付方式</p>
+                <div >
+                    <span>选择支付方式：</span>
+                    <img src="./images/tuijian/zhifu-1.jpg" alt="">
+                    <span>选择其他支付方式
+                        <select id="select">
+                            <option value="1">支付宝</option>
+                            <option value="2">微信</option>
+                            <option value="3">银行卡</option>
+                        </select>
+                    </span>
+                    
+                </div>
+            </div>
+            <!-- 订单信息 -->
+            <div class="dingdan" id="dingdan">
+                <p id="ddhao">订单信息<span style="color:darkblue;font-size:14px;margin-left:30px;">订单号：<span>000000000000000</span></span></span><a href="http://127.0.0.1:3000/cart.html">返回购物车</a></p>
+                <table id="table">
+                    <thead>
+                        <tr align="center" style="font-size:16px;">
+                            <th>商品图片</th>
+                            <th>商品信息</th>
+                            <th>单价</th>
+                            <th>数量</th>
+                            <th>小计</th>
+                            <th>库存</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 提交订单 -->
+            <div class="tijiao">
+                <p><span>应付金额：</span>
+                    <span style="color:red;font-size:28px;">￥8888.00</span>
+                    <button>提交订单</button>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="fukuan">
+        <p><span>X</span></p>
+        <p><span>支付总金额为:</span><span>￥888888.00</span></p>
+    </div>
+    <div id="beijing"></div>
+    <div id="myFooter"></div>
+    <script>
+        //导入头部文件//导入尾部文件
+        $(document).ready(function(){
+            $("#myHeader").load("header.html");
+            $("#myFooter").load("footer.html");
+        })
+    </script>
+</body>
+</html>
